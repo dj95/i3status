@@ -566,6 +566,8 @@ int main(int argc, char *argv[]) {
         else if (output_format == O_TERM)
             /* Restore the cursor-position, clear line */
             printf("\033[u\033[K");
+        else if (output_format == O_NONE)
+            printf("SYS ");
         for (j = 0; j < cfg_size(cfg, "order"); j++) {
             cur_instance = per_instance + j;
             if (j > 0)
